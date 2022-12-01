@@ -1,0 +1,155 @@
+.backLogin{
+    overflow-x: hidden;
+    width: 100vw !important; 
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding-top: 5vh;
+    align-items: center;
+    background: rgb(53,22,105);
+    background: linear-gradient(0deg, #0A0A13 0%, #030315c6 100%);
+}
+picture{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.logo{
+    width: 100px;
+ }
+
+.boxLogin{
+    margin-top: 10%;
+    padding: 5% 8%;
+    width: 65vw;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid black;
+    border-radius: 15px;
+    background: #ffffff;
+}
+
+.login{
+    font-size: 1.2rem;
+    text-align: center;
+    color: rgba(52, 29, 49, 0.652);
+}
+.logTitle{
+    height: 10%;
+    margin-block-start: 2%;
+    margin-block-end: 0%;
+    color: #f7f7f7;
+    font-size: 1.5rem;
+}
+
+.formBox{
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.box{
+    display: flex;
+    flex-direction: column;
+}
+
+input[name="email"], [name="password"] {
+    background-color: rgb(255, 255, 255);
+    height: 30px;
+    border: 2px solid rgba(52, 29, 49, 0.241);
+    border-radius: 5px;
+    margin-top: 5px;
+    font-size: 0.8rem;
+    color: #413364;
+    padding-left: 16%;
+}
+
+input[name="email"] {
+    background: url(../../assets/img/User.png);
+    background-repeat: no-repeat;
+    background-size: 2rem;
+    background-position: 1.5% 45%;
+ }
+
+ input[name="password"] {
+    background: url(../../assets/img/password.png);
+    background-repeat: no-repeat;
+    background-size: 2rem;
+    background-position: 1% 45%;
+ }
+
+
+label{
+    color: #424242b0;
+    font-weight: 900;
+    font-size: 0.8rem;
+}
+
+.logBtn{
+    /*background: rgb(99,70,134);
+    background: linear-gradient(90deg, rgba(99,70,134,1) 0%, rgba(62,22,115,1) 0%, rgba(46,9,121,1) 32%, rgba(8,98,133,1) 62%, rgba(7,123,150,1) 70%, rgba(0,255,239,1) 100%);
+    */
+    font-family:"quicksand";
+    margin-top: 8%;
+    /*background: linear-gradient(132deg, rgb(146, 11, 126) 0.00%, rgb(52, 29, 49) 100.00%);*/
+     background-color: #2e7593;
+     color: #fbf7f7;
+     border-radius: 5px;
+     border: none;
+     font-weight: 700;
+     height: 35px;
+     font-size: 1rem;
+}
+
+.logBtn:hover{
+   /* background: linear-gradient(132deg, rgba(146, 11, 126, 0.316) 0.00%, rgba(52, 29, 49, 0.327) 100.00%);*/
+   background-color: #f7f7f7;
+    border: 3px solid #97C254;
+    color: #97C254;
+    font-size: 1.1rem;
+    transition-property:initial;   
+    transition-duration: 1s;
+    font-weight: 900;
+}
+.forgotPass{
+    text-align: center;
+    font-weight: 600;
+    font-size: 0.8rem;
+    color: #413364;
+}
+
+input:-internal-autofill-selected {
+    padding-left: 2%;
+}
+
+.warningError{
+    margin: 5px;
+    font-size: 0.8rem;
+    color: red;
+}
+
+@media only screen and (min-width: 600px) {
+    .login{
+        font-size: 1.3rem;
+    }
+    .boxLogin{
+        margin-top: 3%;
+        padding: 1% 2%;
+        width: 25vw;
+        height: 55vh;
+    }
+    input[name="email"], [name="password"] {
+        height: 40px;
+        font-size: 0.9rem;
+        padding-left: 13%;
+    }
+    input:-internal-autofill-selected {
+        padding-left: 2%;
+        }
+    .logBtn{
+        height: 45px;
+        margin-top: 1%;
+    }
+  }
