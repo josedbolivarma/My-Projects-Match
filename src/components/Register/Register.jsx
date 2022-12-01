@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/auth';
 import { useForm } from '../../hooks';
+import pic from "../../assets/img/logimg.jpg";
 
 import styles from './Register.module.css';
 
@@ -31,11 +32,7 @@ export const Register = () => {
   return (
     <div className={styles.root}>
       <div className={styles.root__sidebar}>
-        <img
-          className={styles.root__sidebarImage}
-          src="https://img.freepik.com/fotos-premium/desarrollador-software-trabajo-remoto-linea-chica-computadora-portatil-codigo-escritura-desarrollador-gerente-proyecto-ofertas-trabajo-desarrollador-junior-navegacion-internet-programacion-estudios-concepto-blogs_474717-77230.jpg?w=2000"
-          alt="sidebar auth"
-        />
+      <img src={pic} className={styles.sideimg} alt="imgregister" />
       </div>
 
       <div className={styles.login__container}>

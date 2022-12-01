@@ -108,7 +108,7 @@ const Login = () => {
                 }} type="submit">
                   Registrarse
                 </button>
-              </form>
+              </form><br></br>
 
               <p className="forgotPass">¿Ha olvidado su contraseña?</p>
             </div>

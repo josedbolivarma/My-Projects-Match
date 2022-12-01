@@ -2,10 +2,7 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import TinderCard from "react-tinder-card";
 import styles from './AppLanding.module.css';
-
-import { FaHandHoldingHeart } from 'react-icons/fa';
-import { TfiReload } from 'react-icons/tfi';
-import { GrLinkNext, GrLinkPrevious } from 'react-icons/gr';
+import Header from "../../components/header/Header"
 
 import axios from 'axios';
 
@@ -178,6 +175,7 @@ export const AppLanding = () => {
   
   return (
     <div className={ styles.appLading }>
+     
     <div className={ styles.tinderCards }>
       <div className={ styles.tinderCards__cardContainer }>
         {people.map((person, index) => (

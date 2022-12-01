@@ -1,5 +1,6 @@
 import { AppRouter } from './routes';
 import { AuthProvider } from './context/auth';
+import {AppLanding} from "./pages/AppLading/AppLanding"
 
 function App() {
   return (
