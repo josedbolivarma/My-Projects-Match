@@ -11,7 +11,7 @@ import axios from 'axios';
 
 import { ProjectCard } from "../../components/ProjectCard/ProjectCard";
 
-const initialData = [
+export const initialData = [
     {
         id: 1,
         imgProject: 'https://res.cloudinary.com/duzncuogi/image/upload/v1667760452/my-portfolio/projects/amazon_gucx6t.jpg',
