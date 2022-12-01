@@ -2,8 +2,18 @@ import styles from './MatchDetail.module.css';
 import { MdOutlineWork } from 'react-icons/md';
 import { AiOutlineFieldTime } from 'react-icons/ai';
 import { BsFillCalendar2WeekFill } from 'react-icons/bs';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 
 export const MatchDetail = () => {
+
+    const [data, setData] = useState([]);
+
+    useEffect(() => {
+     axios.get('https://localhost:3001/data')
+    }, []);
+    
+
   return (
     <div className={ styles.section }>
         <header>

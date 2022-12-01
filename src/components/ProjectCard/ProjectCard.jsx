@@ -8,14 +8,13 @@ import { Link } from "react-router-dom";
 export const ProjectCard = ({ person, swipe, canSwipe, goBack, canGoBack }) => {
   return (
     <div
-      
       className={ styles.card }
     >
-        <Link to={`/match/${ person.name }`}>
+        <Link to={`/match/${ person.id }`}>
         <div className={ styles.cardBanner }
             style={{ backgroundImage: `url(${person.imgProject})` }}
         >
-            <img className={ styles.logoProfile } src="https://img.freepik.com/foto-gratis/feliz-joven-estudiante-sosteniendo-cuadernos-cursos-sonriendo-camara-pie-ropa-primavera-sobre-fondo-azul_1258-70161.jpg" />
+            <img className={ styles.logoProfile } src={ person.avatar } />
             <div className={ styles.cardBannerContent }>
                 <h2>{ person.name }</h2>
             </div>
@@ -44,6 +43,7 @@ export const ProjectCard = ({ person, swipe, canSwipe, goBack, canGoBack }) => {
                     ))
                 }
             </div>
+            
             </div>
         </div>
 

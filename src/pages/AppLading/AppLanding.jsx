@@ -13,14 +13,19 @@ import { ProjectCard } from "../../components/ProjectCard/ProjectCard";
 
 const initialData = [
     {
+        id: 1,
         imgProject: 'https://res.cloudinary.com/duzncuogi/image/upload/v1667760452/my-portfolio/projects/amazon_gucx6t.jpg',
         name: 'Amazon Clone',
+        avatar: 'https://media-exp1.licdn.com/dms/image/D4D08AQE0CXu4hnoe7g/croft-frontend-shrinkToFit1024/0/1646754728586?e=2147483647&v=beta&t=ADkOVwOwmP-4rCH4y0g2_OBFlsszl01TpQPhCgt5SSc',
         username: 'Jose David',
         description: 'Amazon Clone Completed Eccommerce',
         host: 'https://dota-app-ts.vercel.app/',
         repository: 'https://github.com/josedbolivarma/Dota-App-TS',
         overview: 'Amazon Ecommerce Clone, has its list of products, a login and user registration, in addition to being able to see the details of each product, these can be added to the stock and to the shopping cart. It has a geolocation system through a global map.',
         jobAspiration: 'Product Manager',
+        linkeding: 'https://www.linkedin.com/in/jose-david-bolivar-mayora-developer/',
+        cv: 'https://www.linkedin.com/in/jose-david-bolivar-mayora-developer/',
+        github: 'https://github.com/josedbolivarma',
         technologies: [
           {
             name: 'React',
@@ -41,6 +46,7 @@ const initialData = [
         ]
     },
     {
+        id: 2,
         imgProject: 'https://res.cloudinary.com/duzncuogi/image/upload/v1667760454/my-portfolio/projects/dota_sqpldu.jpg',
         name: 'Dota 2 App',
         username: 'Carolina',
@@ -49,6 +55,10 @@ const initialData = [
         repository: 'https://github.com/josedbolivarma/Dota-App-TS',
         overview: 'Personal application based on the Dota 2 MOBA video game. Clone of the main page of https://www.dota2.com/heroes. The user can choose a hero, apply a series of filters or search for it directly. Once the hero and its detail page have been selected, the abilities, points and description of said hero will be displayed, as well as the possibility of choosing the next or previous hero, depending on whether they exist.',
         jobAspiration: 'Frontend Developer',
+        avatar: 'https://images.unsplash.com/photo-1573497019236-17f8177b81e8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8cHJvZmVzc2lvbmFsJTIwd29tYW58ZW58MHx8MHx8&w=1000&q=80',
+        linkeding: 'https://www.linkedin.com/in/jose-david-bolivar-mayora-developer/',
+        cv: 'https://www.linkedin.com/in/jose-david-bolivar-mayora-developer/',
+        github: 'https://github.com/josedbolivarma',
         technologies: [
           {
             name: 'React',
@@ -73,14 +83,19 @@ const initialData = [
         ]
     },
     {
+      id: 3,
       imgProject: 'https://res.cloudinary.com/duzncuogi/image/upload/v1667760480/my-portfolio/projects/netflix_b8ukv8.png',
       name: 'Netflix Clone',
-      username: 'Carolina',
+      username: 'Christian',
+      avatar: 'https://www.hindustanbazzar.com/adminpanel/upload/cms/1653958782031.jpg',
       description: 'Clone app inspired in Dota 2 App',
       host: 'https://app-netnet.vercel.app/',
       repository: 'https://github.com/josedbolivarma/app-netnet',
       overview: 'Netflix clone made with Vanilla JavaScript ,Rest API with NodeJS and deploy to Heroku. Use of LocalStorage and Fetch API.',
       jobAspiration: 'Sr. User Interface Designer',
+      linkeding: 'https://www.linkedin.com/in/jose-david-bolivar-mayora-developer/',
+      cv: 'https://www.linkedin.com/in/jose-david-bolivar-mayora-developer/',
+      github: 'https://github.com/josedbolivarma',
       technologies: [
         {
           name: 'JavaScript',
