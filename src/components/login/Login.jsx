@@ -3,41 +3,35 @@ import "./Login.css";
 import logo from "../../assets/img/match.png";
 import { Formik } from "formik";
 import { AuthContext } from "../../context/auth";
+import { useNavigate } from "react-router-dom";
+import { useForm } from "../../hooks";
 
 const Login = () => {
   const [errors, setErrors] = useState({});
-  // const [user, setUser] = useState({
-  //   email: null,
-  //   password: null,
-  // });
+  const [values, handleInputChange, reset] = useForm({
+    email: "",
+    password: "",
+  });
+
   const { loginEmailPassword } = useContext(AuthContext);
 
-  // const handleEmail = (e) => {
-  //   const email = e.target.value;
-  //   setUser({ ...user, email });
-  //   setErrors({ ...errors, email: null });
-  // };
+  const navigate = useNavigate();
+ 
 
-  // const handlePassword = (e) => {
-  //   const password = e.target.value;
-  //   setUser({ ...user, password });
-  //   setErrors({ ...errors, password: null });
-  // };
-
-  const validate = (values) => {
-    console.log("values", values);
+  const validate = (value) => {
+    console.log("values", value);
     const error = {};
 
-    if (!values.email) error.email = "Este campo es obligatorio";
+    if (!value.email) error.email = "Este campo es obligatorio";
     else if (
       !/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/i.test(
-        values.email
+        value.email
       )
     )
       error.email = "Email incorrecto";
-    else error.email = null;
+      else error.email = null;
 
-    if (values.password === null) error.password = "Este campo es obligatorio";
+    if (value.password === null) error.password = "Este campo es obligatorio";
 
     setErrors(error);
     //if has errors return true
@@ -45,46 +39,23 @@ const Login = () => {
     else return false;
   };
 
-  const loginUser = (e) => {
-    // if (validate(user)) {
-    //   return;
-    // }
-
+  const handleSubmit  = (e) => {
+    e.preventDefault();
+    if (validate(values)) {
+      return;
+    }
     console.log('Valores', { e });
-    loginEmailPassword(e);
-    console.log("final user", e);
+    loginEmailPassword(values);
+    reset();
+    navigate('/match');
   };
+
+  const handleNavigate=()=>{
+    navigate("/register")
+}
 
   return (
     <>
-      <Formik
-        initialValues={{
-          email: "",
-          password: "",
-        }}
-        validate={(valores) => {
-          let errores = {};
-
-          if (!valores.email) {
-            errores.email = "Por favor ingresa un email";
-          }
-          return errores;
-
-          //Validación Password
-        }}
-        onSubmit={(valores, { resetForm }) => {
-          loginUser(valores);
-          resetForm();
-        }}
-      >
-        {({
-          values,
-          errors,
-          touched,
-          handleSubmit,
-          handleChange,
-          handleBlur,
-        }) => (
           <div className="backLogin">
             <picture>
               <img src={logo} className="logo" alt="logo" />
@@ -104,8 +75,7 @@ const Login = () => {
                       id="email"
                       name="email"
                       value={values.email || ""}
-                      onChange={handleChange}
-                      onBlur={handleBlur}
+                      onChange={handleInputChange}
                     />
                     {errors.email && (
                       <p className="warningError">{errors.email}</p>
@@ -121,8 +91,7 @@ const Login = () => {
                       id="password"
                       name="password"
                       value={values.password || ""}
-                      onChange={handleChange}
-                      onBlur={handleBlur}
+                      onChange={handleInputChange}
                     />
                     {errors.password && (
                       <p className="warningError">{errors.password}</p>
@@ -133,13 +102,17 @@ const Login = () => {
                 <button className="logBtn" type="submit">
                   Iniciar Sesión
                 </button>
+
+                <button onClick={ handleNavigate } className="logBtn" style={{
+                  backgroundColor: 'black'
+                }} type="submit">
+                  Registrarse
+                </button>
               </form>
 
               <p className="forgotPass">¿Ha olvidado su contraseña?</p>
             </div>
           </div>
-        )}
-      </Formik>
     </>
   );
 };

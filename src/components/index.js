@@ -1,1 +1,2 @@
-export * from './ProjectCard';
+export * from './ProjectCard/ProjectCard';
+export * from './Register/Register';
