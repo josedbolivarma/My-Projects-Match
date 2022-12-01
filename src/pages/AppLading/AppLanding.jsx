@@ -1,19 +1,101 @@
 
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import TinderCard from "react-tinder-card";
-import '../../components/ProjectCard/ProjectCard.css';
+import styles from './AppLanding.module.css';
+
+import { FaHandHoldingHeart } from 'react-icons/fa';
+import { TfiReload } from 'react-icons/tfi';
+import { GrLinkNext, GrLinkPrevious } from 'react-icons/gr';
 
 import axios from 'axios';
+
+import { ProjectCard } from "../../components/ProjectCard/ProjectCard";
 
 const initialData = [
     {
         imgProject: 'https://res.cloudinary.com/duzncuogi/image/upload/v1667760452/my-portfolio/projects/amazon_gucx6t.jpg',
-        name: 'Jose'
+        name: 'Amazon Clone',
+        username: 'Jose David',
+        description: 'Amazon Clone Completed Eccommerce',
+        host: 'https://dota-app-ts.vercel.app/',
+        repository: 'https://github.com/josedbolivarma/Dota-App-TS',
+        overview: 'Amazon Ecommerce Clone, has its list of products, a login and user registration, in addition to being able to see the details of each product, these can be added to the stock and to the shopping cart. It has a geolocation system through a global map.',
+        jobAspiration: 'Product Manager',
+        technologies: [
+          {
+            name: 'React',
+            icon: ''
+          },
+          {
+            name: 'Redux',
+            icon: 'https://raw.githubusercontent.com/reduxjs/redux/master/logo/logo.png'
+          },
+          {
+            name: 'TypeScript',
+            icon: ''
+          },
+          {
+            name: 'Firebase',
+            icon: 'https://cdn.freebiesupply.com/logos/large/2x/firebase-1-logo-png-transparent.png'
+          }
+        ]
     },
     {
-        imgProject: 'https://res.cloudinary.com/duzncuogi/image/upload/v1667760480/my-portfolio/projects/netflix_b8ukv8.png',
-        name: 'Carolina'
+        imgProject: 'https://res.cloudinary.com/duzncuogi/image/upload/v1667760454/my-portfolio/projects/dota_sqpldu.jpg',
+        name: 'Dota 2 App',
+        username: 'Carolina',
+        description: 'Clone app inspired in Dota 2 App',
+        host: 'https://dota-app-ts.vercel.app/',
+        repository: 'https://github.com/josedbolivarma/Dota-App-TS',
+        overview: 'Personal application based on the Dota 2 MOBA video game. Clone of the main page of https://www.dota2.com/heroes. The user can choose a hero, apply a series of filters or search for it directly. Once the hero and its detail page have been selected, the abilities, points and description of said hero will be displayed, as well as the possibility of choosing the next or previous hero, depending on whether they exist.',
+        jobAspiration: 'Frontend Developer',
+        technologies: [
+          {
+            name: 'React',
+            icon: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/2300px-React-icon.svg.png'
+          },
+          {
+            name: 'TypeScript',
+            icon: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/1200px-Typescript_logo_2020.svg.png'
+          },
+          {
+            name: 'NodeJS',
+            icon: ''
+          },
+          {
+            name: 'Heroku',
+            icon: ''
+          },
+          {
+            name: 'Sass',
+            icon: ''
+          },
+        ]
     },
+    {
+      imgProject: 'https://res.cloudinary.com/duzncuogi/image/upload/v1667760480/my-portfolio/projects/netflix_b8ukv8.png',
+      name: 'Netflix Clone',
+      username: 'Carolina',
+      description: 'Clone app inspired in Dota 2 App',
+      host: 'https://app-netnet.vercel.app/',
+      repository: 'https://github.com/josedbolivarma/app-netnet',
+      overview: 'Netflix clone made with Vanilla JavaScript ,Rest API with NodeJS and deploy to Heroku. Use of LocalStorage and Fetch API.',
+      jobAspiration: 'Sr. User Interface Designer',
+      technologies: [
+        {
+          name: 'JavaScript',
+          icon: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/2300px-React-icon.svg.png'
+        },
+        {
+          name: 'Rest API',
+          icon: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/1200px-Typescript_logo_2020.svg.png'
+        },
+        {
+          name: 'Heroku',
+          icon: ''
+        },
+      ]
+  },
 ]
 
 export const AppLanding = () => {
@@ -80,34 +162,72 @@ export const AppLanding = () => {
   }
   
   return (
-    <div className="tinderCards">
-      <div className="tinderCards__cardContainer">
+    <div className={ styles.appLading }>
+    <div className={ styles.tinderCards }>
+      <div className={ styles.tinderCards__cardContainer }>
         {people.map((person, index) => (
           <TinderCard
-            className="swipe"
+            className={ styles.swipe }
             ref={childRefs[index]}
             key={person.name}
             onSwipe={(dir) => swiped(dir, person.name, index)}
             onCardLeftScreen={() => outOfFrame(person.name, index)}
           >
-            <div
-              style={{ backgroundImage: `url(${person.imgProject})` }}
-              className="card"
-            >
-              <h3>{person.name}</h3>
-            </div>
+            <ProjectCard person={ person } 
+            canGoBack={ canGoBack }
+            canSwipe={ canSwipe }
+            goBack={ goBack }
+            swipe={ swipe }
+            />
           </TinderCard>
         ))}
       </div>
-      <div className='buttons'>
-        <button style={{ backgroundColor: !canSwipe && '#c3c4d3' }} onClick={() => swipe('left')}>Swipe left!</button>
-        <button style={{ backgroundColor: !canGoBack && '#c3c4d3' }} onClick={() => goBack()}>Undo swipe!</button>
-        <button style={{ backgroundColor: !canSwipe && '#c3c4d3' }} onClick={() => swipe('right')}>Swipe right!</button>
-      </div>
-      <div>
-        <button>Favorite</button>
-
-      </div>
+      
     </div>
+
+    {/* <div className={ styles.buttons }>
+        <GrLinkPrevious size={ 40 } color={ !canSwipe && '#c3c4d3' } onClick={() => swipe('left')} />
+        <TfiReload size={ 40 } color={ !canGoBack && '#c3c4d3' } onClick={() => goBack()} />
+        <GrLinkNext size={ 40 } color={ !canSwipe && '#c3c4d3' } onClick={() => swipe('right')} />
+        <FaHandHoldingHeart size={ 40 }/>
+      </div> */}
+
+    </div>
+
   )
 }
+
+
+// const TINDER = () => {
+//   return (
+    // <div className="tinderCards">
+    //   <div className="tinderCards__cardContainer">
+    //     {people.map((person, index) => (
+    //       <TinderCard
+    //         className="swipe"
+    //         ref={childRefs[index]}
+    //         key={person.name}
+    //         onSwipe={(dir) => swiped(dir, person.name, index)}
+    //         onCardLeftScreen={() => outOfFrame(person.name, index)}
+    //       >
+    //         <div
+    //           style={{ backgroundImage: `url(${person.imgProject})` }}
+    //           className="card"
+    //         >
+    //           <h3>{person.name}</h3>
+    //         </div>
+    //       </TinderCard>
+    //     ))}
+    //   </div>
+    //   <div className='buttons'>
+    //     <button style={{ backgroundColor: !canSwipe && '#c3c4d3' }} onClick={() => swipe('left')}>Swipe left!</button>
+    //     <button style={{ backgroundColor: !canGoBack && '#c3c4d3' }} onClick={() => goBack()}>Undo swipe!</button>
+    //     <button style={{ backgroundColor: !canSwipe && '#c3c4d3' }} onClick={() => swipe('right')}>Swipe right!</button>
+    //   </div>
+    //   <div>
+    //     <button>Favorite</button>
+
+    //   </div>
+    // </div>
+//   )
+// }

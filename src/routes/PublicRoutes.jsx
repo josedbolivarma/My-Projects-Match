@@ -1,6 +1,8 @@
 
-export const PublicRoutes = () => {
+export const PublicRoutes = ({ children }) => {
   return (
-    <div>PublicRoutes</div>
+    <div>
+      { children }
+    </div>
   )
 }

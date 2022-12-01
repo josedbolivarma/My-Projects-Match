@@ -1,0 +1,54 @@
+<div className='backLogin'>
+
+    <picture>
+      <img src={logo} className="logo" alt='logo'/>
+     <h3 className='logTitle'>Bonsai</h3>
+  </picture>
+
+ <div className="boxLogin">
+       <h3 className='login'>Ingresar</h3>
+      
+      <form className='formBox'>
+//             <div>
+//                 <div className='emailBox box'>
+//                     <label htmlFor="email">Correo</label>
+//                     <input
+//                         type="email"
+//                         placeholder="Correo"
+//                         id="email"
+//                         name="email"
+//                         value={user.email || ""}
+//                         onChange={handleEmail}
+                                     
+//                     />
+//                       {errors.email && (
+//                             <p className='warningError'>{errors.email}</p>
+//                         )}
+//                 </div>
+//                 <br/>
+//                 <div className='passwordBox box'>
+//                     <label htmlFor="password">Contraseña</label>
+//                     <input
+//                        className='input'
+//                         type="password"
+//                         placeholder="Contraseña"
+//                         id="password"
+//                         name="password"
+//                         value={user.password || ""}
+//                         onChange={handlePassword}
+                       
+//                     />
+//                       {errors.password && (
+//                             <p className='warningError'>{errors.password}</p>
+//                         )}
+//                 </div>
+//             </div>
+         
+//             <button className='logBtn' onClick={logUser}>Iniciar Sesión</button>
+//         </form>
+
+//         <p className='forgotPass'>¿Ha olvidado su contraseña?</p>
+       
+//     </div>
+   
+// </div>

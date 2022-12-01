@@ -1,0 +1,121 @@
+.card {
+    position: relative;
+    background-color: #fff;
+    width: 600px;
+    padding: 20px;
+    max-width: 85vw;
+    height: 100%;
+    margin: 30px 0;
+    box-shadow: 0px 10px 53px 0px rgba(0, 0, 0, .3);
+    border-radius: 4px;
+    background-size: cover;
+    background-position: center;
+    overflow-y: hidden;
+  }
+
+
+  .cardBanner {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: all .3s ease-in-out;
+  }
+
+  .cardBanner:hover {
+    position: relative;
+    opacity: .9;
+    background-color: #000;
+    cursor: pointer;
+  }
+
+  .cardBanner:hover .cardBannerContent {
+    top: 40px;
+  }
+
+  .cardBannerContent {
+    width: 100%;
+    height: 100%;
+    top: -110px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    transition: all .3s ease-in-out;
+  }
+  
+  .cardBannerContent > h2 {
+    color: #FFF;
+    text-transform: capitalize;
+    font-size: 2.4rem;
+  }
+
+  .cardBannerContentTop {
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    transform: translateY(-18%);
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    transition: all .3s ease-in-out;
+  }
+
+  .cardBannerContentTop > h2 {
+    color: #FFF;
+    text-transform: capitalize;
+    font-size: 2.7rem;
+  }
+
+  .logoProfile {
+    position: absolute;
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    bottom: -14%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .contentDescription {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .contentDescription h3 {
+    margin-top: 60px;
+    font-size: 2rem;
+  }
+
+  .cardLegend {
+    padding: 20px;
+    background-color: aliceblue;
+  }
+
+  .cardLegend h3 {
+    color: #444;
+    font-size: .8rem;
+  }
+
+  .cardLegend h2 {
+    font-size: 1.2rem;
+  }
+
+  .boxFlex {
+    width: 100%;
+    display: flex;
+    gap: .8rem;
+  }
+
+  .boxFlex > *:hover {
+    color: rgb(4, 255, 171);
+    cursor: pointer;
+  }
+
+  .buttons {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1.4rem;
+  }

@@ -1,6 +1,8 @@
 
-export const PrivateRoutes = () => {
+export const PrivateRoutes = ({ children }) => {
   return (
-    <div>PrivateRoutes</div>
+    <div>
+      { children }
+    </div>
   )
 }
