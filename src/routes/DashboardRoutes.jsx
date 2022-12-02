@@ -1,10 +1,11 @@
 import React from 'react'
 import { Navigate, Route, Routes } from 'react-router-dom'
-import { MatchDetail } from '../pages'
+import { DevLanding, MatchDetail } from '../pages'
 import { AppLanding } from '../pages';
 
 // import { Footer } from '../components'
 import { Header } from '../components'
+import { HomeLanding } from '../pages/';
 
 export const DashboardRoutes = () => {
 
@@ -12,6 +13,11 @@ export const DashboardRoutes = () => {
     <div>
       <Header />
       <Routes>
+      <Route 
+          path="/"
+          element={<HomeLanding /> }
+        />
+
         <Route 
           path="/match"
           element={<AppLanding /> }
