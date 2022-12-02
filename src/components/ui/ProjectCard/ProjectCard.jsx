@@ -2,7 +2,6 @@ import styles from "./ProjectCard.module.css";
 import { FaHeart } from 'react-icons/fa';
 import { TfiReload } from 'react-icons/tfi';
 import { GrLinkNext, GrLinkPrevious } from 'react-icons/gr';
-import { SiNextdotjs, SiExpress, SiTailwindcss } from 'react-icons/si';
 import { Link } from "react-router-dom";
 
 export const ProjectCard = ({ person, swipe, canSwipe, goBack, canGoBack }) => {

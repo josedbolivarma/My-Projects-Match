@@ -1,19 +1,14 @@
 
-import React, { useEffect, useMemo, useRef, useState } from "react";
+import React, { useMemo, useRef, useState } from "react";
 import TinderCard from "react-tinder-card";
 import styles from './AppLanding.module.css';
 
-import { FaHandHoldingHeart } from 'react-icons/fa';
-import { TfiReload } from 'react-icons/tfi';
-import { GrLinkNext, GrLinkPrevious } from 'react-icons/gr';
 
-import axios from 'axios';
-
-import { ProjectCard } from "../../components/ProjectCard/ProjectCard";
+import { ProjectCard } from "../../../components";
 
 export const initialData = [
     {
-        id: 1,
+        id: 3,
         imgProject: 'https://res.cloudinary.com/duzncuogi/image/upload/v1667760452/my-portfolio/projects/amazon_gucx6t.jpg',
         name: 'Amazon Clone',
         avatar: 'https://media-exp1.licdn.com/dms/image/D4D08AQE0CXu4hnoe7g/croft-frontend-shrinkToFit1024/0/1646754728586?e=2147483647&v=beta&t=ADkOVwOwmP-4rCH4y0g2_OBFlsszl01TpQPhCgt5SSc',
@@ -46,7 +41,7 @@ export const initialData = [
         ]
     },
     {
-        id: 2,
+        id: 1,
         imgProject: 'https://res.cloudinary.com/duzncuogi/image/upload/v1667760454/my-portfolio/projects/dota_sqpldu.jpg',
         name: 'Dota 2 App',
         username: 'Carolina',
@@ -83,7 +78,7 @@ export const initialData = [
         ]
     },
     {
-      id: 3,
+      id: 4,
       imgProject: 'https://res.cloudinary.com/duzncuogi/image/upload/v1667760480/my-portfolio/projects/netflix_b8ukv8.png',
       name: 'Netflix Clone',
       username: 'Christian',
@@ -129,14 +124,6 @@ export const AppLanding = () => {
     []
   );
 
-  useEffect(() => {
-    // async function fetchData() {
-    // //   const req = await axios.get("/api/projects/cards");
-
-    //   setPeople(req.data);
-    // // }
-    // fetchData();
-  }, []);
 
   const updateCurrentIndex = (val) => {
     setCurrentIndex(val)

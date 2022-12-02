@@ -1,12 +1,11 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 import "./Login.css";
-import logo from "../../assets/img/match.png";
-import { Formik } from "formik";
-import { AuthContext } from "../../context/auth";
+import logo from "../../../assets/img/match.png";
+import { AuthContext } from "../../../context/auth";
 import { useNavigate } from "react-router-dom";
-import { useForm } from "../../hooks";
+import { useForm } from "../../../hooks";
 
-const Login = () => {
+export const Login = () => {
   const [errors, setErrors] = useState({});
   const [values, handleInputChange, reset] = useForm({
     email: "",
@@ -116,5 +115,3 @@ const Login = () => {
     </>
   );
 };
-
-export default Login;

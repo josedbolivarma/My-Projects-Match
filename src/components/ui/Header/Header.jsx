@@ -4,7 +4,7 @@ import { AiOutlineClose, AiOutlineMail, AiOutlineMenu } from 'react-icons/ai'
 import { BsFillPersonFill, BsFillPersonLinesFill } from 'react-icons/bs'
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa'
 import { Link, useNavigate } from 'react-router-dom'
-import { AuthContext } from '../../context/auth'
+import { AuthContext } from '../../../context/auth';
 
 export const Header = () => {
 
@@ -111,12 +111,12 @@ export const Header = () => {
           <div
             className={
               nav
-                ? 'fixed left-0 top-0 w-[75%] sm:w-[60%] md:w-[45%] h-screen bg-[#111] p-10 ease-in duration-500'
+                ? 'fixed left-0 top-0 w-[75%] sm:w-[60%] md:w-[45%] h-screen bg-[#F2F2F2] p-10 ease-in duration-500'
                 : 'fixed left-[-100%] top-0 p-10 ease-in duration-500'
             }
           >
             <div>
-              <div className='flex w-full items-center justify-between text-white'>
+              <div className='flex w-full items-center justify-between text-black'>
                
                 <div
                   onClick={handleNav}
@@ -126,13 +126,13 @@ export const Header = () => {
                 </div>
               </div>
               <div className='border-b border-gray-300 my-4'>
-                <p className='w-[85%] md:w-[90%] py-4 text-white'>
+                <p className='w-[85%] md:w-[90%] py-4 text-black'>
                   Let&#39;s build something legendary together
                 </p>
               </div>
             </div>
             <div className='py-4 flex flex-col'>
-              <ul className='uppercase text-white'>
+              <ul className='uppercase text-black'>
                 <Link href='/'>
                   <li onClick={() => setNav(false)} className='py-4 text-sm'>
                     Home

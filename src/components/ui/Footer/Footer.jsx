@@ -1,4 +1,3 @@
-import React from 'react'
 import { AiFillFacebook } from 'react-icons/ai'
 import { BsInstagram } from 'react-icons/bs'
 import { TfiLinkedin } from 'react-icons/tfi'

@@ -1,1 +1,2 @@
-export * from './MatchDetail/MatchDetail';
+export * from './match';
+export * from './auth';

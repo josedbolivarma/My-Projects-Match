@@ -1,13 +1,10 @@
-import { getAuth } from 'firebase/auth'
-import React, { useContext, useEffect, useState } from 'react'
-import { Navigate, Route, Routes, useNavigate } from 'react-router-dom'
-import { AuthContext } from '../context/auth'
+import React from 'react'
+import { Navigate, Route, Routes } from 'react-router-dom'
 import { MatchDetail } from '../pages'
-import { AppLanding } from '../pages/AppLading/AppLanding'
+import { AppLanding } from '../pages';
 
-import { BsFillPersonFill } from 'react-icons/bs';
-import { Footer } from '../components'
-import { Header } from '../components/Header/Header'
+// import { Footer } from '../components'
+import { Header } from '../components'
 
 export const DashboardRoutes = () => {
 

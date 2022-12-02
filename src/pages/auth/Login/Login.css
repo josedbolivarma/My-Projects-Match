@@ -67,14 +67,14 @@ input[name="email"], [name="password"] {
 }
 
 input[name="email"] {
-    background: url(../../assets/img/User.png);
+    background: url(../../../assets/img/user.png);
     background-repeat: no-repeat;
     background-size: 2rem;
     background-position: 1.5% 45%;
  }
 
  input[name="password"] {
-    background: url(../../assets/img/password.png);
+    background: url(../../../assets/img/password.png);
     background-repeat: no-repeat;
     background-size: 2rem;
     background-position: 1% 45%;

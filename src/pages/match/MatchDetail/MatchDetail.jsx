@@ -3,14 +3,13 @@ import { MdOutlineWork } from 'react-icons/md';
 import { AiOutlineFieldTime } from 'react-icons/ai';
 import { BsFillCalendar2WeekFill, BsInstagram } from 'react-icons/bs';
 import { useEffect, useState } from 'react';
-import axios from 'axios';
-import { BlogCards } from '../../components/BlogCards/BlogCards';
+import { BlogCards } from '../../../components';
 import { useParams } from 'react-router-dom';
 import { initialData } from '../AppLading/AppLanding';
 
 import { BsLinkedin, BsGithub, BsFacebook } from 'react-icons/bs';
-import { AiFillInstagram } from 'react-icons/ai';
-import { Footer } from '../../components';
+
+import { Footer } from '../../../components';
 
 
 export const MatchDetail = () => {
@@ -20,7 +19,7 @@ export const MatchDetail = () => {
 
     useEffect(() => {
         const newData = initialData.filter((item) => item.id == card );
-        console.log(newData);
+        window.scrollTo(0, 0);
         setData(newData[0]);
     }, [card]);
     
