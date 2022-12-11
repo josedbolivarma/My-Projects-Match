@@ -1,8 +1,10 @@
+import { Header } from '../../../components';
 import styles from './HomeLanding.module.css';
 
 export const HomeLanding = () => {
   return (
     <div>
+      <Header />
         <div className={ styles.home__container }>
         <div className={ styles.home__content }>
           <p className={ styles.home__titlePrincipal }>

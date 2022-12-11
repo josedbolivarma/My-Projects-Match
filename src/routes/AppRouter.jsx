@@ -1,8 +1,7 @@
 import { getAuth, onAuthStateChanged } from "firebase/auth"
 import { useEffect, useState } from "react"
 import { BrowserRouter, Route, Routes } from "react-router-dom"
-import { Register } from "../components"
-import { Login } from "../pages";
+import { HomeLanding, Login, Register } from "../pages";
 import { DashboardRoutes } from "./DashboardRoutes"
 import { PrivateRoutes } from "./PrivateRoutes"
 import { PublicRoutes } from "./PublicRoutes"
@@ -100,6 +99,15 @@ export const AppRouter = () => {
   return (
     <BrowserRouter>
       <Routes>
+      <Route
+          path="/"
+          element={
+            <PublicRoutes isAuth={isLoggedIn}>
+              <HomeLanding />
+            </PublicRoutes>
+          }
+        />
+
         <Route
           path="/login"
           element={
@@ -113,7 +121,6 @@ export const AppRouter = () => {
           path="/register"
           element={
             <PublicRoutes isAuth={isLoggedIn}>
-              {/* <Register /> */}
               <Register />
 
             </PublicRoutes>

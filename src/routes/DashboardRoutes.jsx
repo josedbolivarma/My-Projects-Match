@@ -5,7 +5,6 @@ import { AppLanding } from '../pages';
 
 // import { Footer } from '../components'
 import { Header } from '../components'
-import { HomeLanding } from '../pages/';
 
 export const DashboardRoutes = () => {
 
@@ -13,10 +12,6 @@ export const DashboardRoutes = () => {
     <div>
       <Header />
       <Routes>
-      <Route 
-          path="/"
-          element={<HomeLanding /> }
-        />
 
         <Route 
           path="/match"

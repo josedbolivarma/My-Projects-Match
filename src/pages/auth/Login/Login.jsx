@@ -4,6 +4,7 @@ import logo from "../../../assets/img/match.png";
 import { AuthContext } from "../../../context/auth";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "../../../hooks";
+import { AiOutlineArrowLeft } from 'react-icons/ai';
 
 export const Login = () => {
   const [errors, setErrors] = useState({});
@@ -46,11 +47,11 @@ export const Login = () => {
     console.log('Valores', { e });
     loginEmailPassword(values);
     reset();
-    navigate('/match');
+    handleNavigate('/match');
   };
 
-  const handleNavigate=()=>{
-    navigate("/register")
+  const handleNavigate=(url)=>{
+    navigate(url);
 }
 
   return (
@@ -102,14 +103,15 @@ export const Login = () => {
                   Iniciar Sesión
                 </button>
 
-                <button onClick={ handleNavigate } className="logBtn" style={{
+                <button onClick={ () => handleNavigate('/register') } className="logBtn" style={{
                   backgroundColor: 'black'
                 }} type="submit">
                   Registrarse
                 </button>
               </form>
 
-              <p className="forgotPass">¿Ha olvidado su contraseña?</p>
+              <p className="forgotPass mb-2">¿Ha olvidado su contraseña?</p>
+              <p className="flex items-center gap-2 text-1xl cursor-pointer" onClick={ () => handleNavigate('/') }><AiOutlineArrowLeft /> Regresar</p>
             </div>
           </div>
     </>
